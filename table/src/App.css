@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+html {
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userTable {
+    width: 75%;
+    margin-right: 20px;
+    margin-top: 50px;
+    min-height: content-box;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.crudUser {
+    width: 20%;
+    margin-top: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tableControlPanel {
+    display: flex;
+    flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.tableHead {
+    height: 45px;
+    background: #F4F2FF;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6E6893;
+;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tableRow {
+    border: 1px solid #F4F2FF;
+}
+
+.tableRow:hover {
+    background: #F2F0F9;
+    cursor: pointer;
+}
+
+.userName {
+    width: 200px;
+    height: 17px;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #25213B;
+    text-transform: none;
+}
+
+.userEmail {
+    width: 200px;
+    height: 17px;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #6E6893;
+    text-transform: none;
+    margin-top: 5px;
+}
+
+.userStatus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: none;
+    background: #E6E6F2;
+    border-radius: 10px;
+    width: 80px;
+    height: 19px;
+    padding-left: 5px;
+}
+
+.paymentStatus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: none;
+    background: #CDFFCD;;
+    border-radius: 10px;
+    width: 80px;
+    height: 19px;
+    padding-left: 5px;
+}
+
+/* Status */
+
+.Inactive {
+    color: #6E6893;
+    background: #F2F0F9;
+}
+
+.Wait {
+    color: #D30000;
+    background: #FFE0E0;
+}
+
+.Overdue {
+    color: #D30000;
+    background: #FFE0E0;
+}
+
+.Unpaid {
+    color: #965E00;
+    background: #FFECCC;
+}
+
+.dateNow {
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6E6893;
+    text-transform: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
 }

@@ -18,7 +18,7 @@ const EditUserForm = props => {
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		if (!user.name || !user.email) return
+		if (!user.name || !user.email || !user.userStatus || !user.paymentStatus || !user.amount) return
 
 		props.updateUser(user.id, user)
 	}
@@ -39,13 +39,37 @@ const EditUserForm = props => {
 				value={user.email}
 				onChange={handleInputChange}
 			/>
-			<input
-				placeholder="User Status"
-				type="text"
+
+			<select
 				name="userStatus"
 				value={user.userStatus}
 				onChange={handleInputChange}
+			>
+				<option value disabled selected>User Status</option>
+				<option>Active</option>
+				<option>Inactive</option>
+				<option>Wait</option>
+			</select>
+
+			<select
+				name="paymentStatus"
+				value={user.paymentStatus}
+				onChange={handleInputChange}
+			>
+				<option value disabled selected>Payment Status</option>
+				<option>Paid</option>
+				<option>Overdue</option>
+				<option>Unpaid</option>
+			</select>
+
+			<input
+				placeholder="Amount"
+				type="text"
+				name="amount"
+				value={user.amount}
+				onChange={handleInputChange}
 			/>
+
 			<button>Update user</button>
 			<button
 				onClick={() => props.setEditing(false)}

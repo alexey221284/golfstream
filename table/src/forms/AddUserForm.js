@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const AddUserForm = props => {
-	const initialFormState = { id: null, name: '', email: '', userStatus: '' }
+	const initialFormState = { id: null, name: '', email: '', amount: ''}
 	const [user, setUser] = useState(initialFormState)
 
 	const handleInputChange = event => {
@@ -11,7 +11,7 @@ const AddUserForm = props => {
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		if (!user.name || !user.email || !user.userStatus) return
+		if (!user.name || !user.email || !user.userStatus || !user.paymentStatus || !user.amount) return
 
 		props.addUser(user)
 		setUser(initialFormState)
@@ -33,11 +33,33 @@ const AddUserForm = props => {
 			value={user.email}
 			onChange={handleInputChange}
 		/>
-		<input
-			placeholder="User status"
-			type="text"
+		<select
 			name="userStatus"
 			value={user.userStatus}
+			onChange={handleInputChange}
+		>
+			<option value disabled selected>User Status</option>
+			<option>Active</option>
+			<option>Inactive</option>
+			<option>Wait</option>
+		</select>
+
+		<select
+			name="paymentStatus"
+			value={user.paymentStatus}
+			onChange={handleInputChange}
+		>
+			<option value disabled selected>Payment Status</option>
+			<option>Paid</option>
+			<option>Overdue</option>
+			<option>Unpaid</option>
+		</select>
+
+		<input
+			placeholder="Amount"
+			type="text"
+			name="amount"
+			value={user.amount}
 			onChange={handleInputChange}
 		/>
 		<button>SAVE</button>
