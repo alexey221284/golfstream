@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import saveImg from '../img/save.png';
 
 const AddUserForm = props => {
 	const initialFormState = { id: null, name: '', email: '', amount: ''}
@@ -62,7 +63,7 @@ const AddUserForm = props => {
 			value={user.amount}
 			onChange={handleInputChange}
 		/>
-		<button>SAVE</button>
+		<button className="saveButton"><img src={saveImg} />Save</button>
 	</form>
 )
 }

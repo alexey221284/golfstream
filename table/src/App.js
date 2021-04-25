@@ -59,7 +59,7 @@ const App = () => {
 
                 <div className="crudUser">
                     {editing ? (
-                        <div>
+                        <div className="createUser">
                             <h2>Edit user</h2>
                             <EditUserForm
                                 editing={editing}
@@ -69,7 +69,7 @@ const App = () => {
                             />
                         </div>
                     ) : (
-                        <div>
+                        <div className="createUser">
                             <h2>Create User</h2>
                             <AddUserForm addUser={addUser}/>
                         </div>

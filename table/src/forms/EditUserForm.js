@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import updateImg from '../img/update.png';
 
 const EditUserForm = props => {
 	const [user, setUser] = useState(props.currentUser)
@@ -70,10 +71,10 @@ const EditUserForm = props => {
 				onChange={handleInputChange}
 			/>
 
-			<button>Update user</button>
+			<button className="updateButton"><img src={updateImg} />Update</button>
 			<button
 				onClick={() => props.setEditing(false)}
-				className="button muted-button"
+				className="button muted-button cancelButton"
 			>
 				Cancel
 			</button>

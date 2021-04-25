@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import filter from '../img/filter.png';
 
 const UserTable = props => {
 
@@ -27,9 +28,8 @@ const UserTable = props => {
 		<table>
 			<thead>
 			<tr className="tableControlPanel">
-				<button>Filter</button>
-				<input type="text"/>
-				<button>+ ADD USER</button>
+				<button className="filter filterButton"><img className="filterImg" src={filter} />Filter</button>
+				<input className="filter filterSearch" type="text" />
 			</tr>
 			<tr className="tableHead">
 				<th>NAME</th>
@@ -50,24 +50,27 @@ const UserTable = props => {
 							</div>
 							<div className="dateNow">{dateNow()}</div>
 						</td>
-						<td >
+						<td>
 							<div className={`paymentStatus ${user.paymentStatus}`}>
 								<li>{user.paymentStatus}</li>
 							</div>
 							<div className="dateNow">{dateNow()}</div>
 						</td>
-						<td>${user.amount}</td>
+						<td className="userAmount">
+							<span>${user.amount}</span>
+							<div>USD</div>
+						</td>
 						<td>
 							<button
 								onClick={() => {
 									props.editRow(user)
 								}}
-								className="button muted-button"
+								className="button buttonCRUD muted-button"
 							>
 								Edit
 							</button>
 							<button
-								className="button muted-button"
+								className="button buttonCRUD deleteButton muted-button"
 								onClick={() => handleDeleteUser(user.id)}
 							>
 								Delete
