@@ -263,6 +263,13 @@ html {
     margin-right: 10px;
     padding: 5px;
     justify-content: center;
+    border: none;
+}
+
+.saveButton:hover, .updateButton:hover, .cancelButton:hover {
+    border: 1px solid #6D5BD0;
+    background: #F2E7FE;
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .saveButton img, .updateButton img {
